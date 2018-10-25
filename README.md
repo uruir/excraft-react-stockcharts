@@ -20,7 +20,7 @@ Multiple [quick start examples](https://github.com/rrag/react-stockcharts-exampl
 - pan and zoom, on touch devices too
 
 ```
-yarn watch # http://localhost:8080/
-yarn release # 将生产环境生成在 ninaris-backend/webAssets/node_modules
-yarn publish
+npm run watch # http://localhost:8080/
+npm run release # 将生产环境生成在 ninaris-backend/webAssets/node_modules
+npm run publish # 先修改 package.version
 ```
