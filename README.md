@@ -19,8 +19,8 @@ Multiple [quick start examples](https://github.com/rrag/react-stockcharts-exampl
 - svg and canvas for improved performance. 
 - pan and zoom, on touch devices too
 
-### 打包
-
 ```
-yarn release
+yarn watch # http://localhost:8080/
+yarn release # 将生产环境生成在 ninaris-backend/webAssets/node_modules
+yarn publish
 ```

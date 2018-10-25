@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 
 const rootPath = path.join(__dirname, "..");
-const ninarisPath = path.join(__dirname, "../../ninaris-backend/webAssets/node_modules");
 
 function buildConfig(mode) {
 	const { ifWatch, ifDocs } = getIfUtils(mode, ["docs", "watch"]);
@@ -20,7 +19,7 @@ function buildConfig(mode) {
 	const devServer = {
 		contentBase: [
 			path.join(rootPath, "docs"),
-			path.join(ninarisPath, "ct-react-stockcharts"),
+			path.join(rootPath, "build"),
 			path.join(rootPath, "node_modules"),
 		],
 		host: process.env.IP, // "10.0.0.106", "localhost"
@@ -40,7 +39,7 @@ function buildConfig(mode) {
 		context,
 		entry: docsEntry,
 		output: {
-			path: path.join(ninarisPath, "ct-react-stockcharts/"),
+			path: path.join(rootPath, "build/"),
 			filename: `dist/[name]${ifDocs(".[chunkhash]", "")}.js`,
 			publicPath: "",
 			library: "ReStock",

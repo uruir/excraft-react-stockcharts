@@ -173,7 +173,7 @@ function defaultDisplay(props, moreProps, itemsToDisplay) {
 				<ToolTipTSpanLabel fill={labelFill} key="label_C">{displayTexts.c}</ToolTipTSpanLabel>
 				<tspan key="value_C" fill={textFill}>{close}</tspan>
 				<ToolTipTSpanLabel fill={labelFill} key="label_P">{displayTexts.p}</ToolTipTSpanLabel>
-				<tspan key="value_Vol" fill={textFill}>{percent}</tspan>
+				<tspan key="value_P" fill={textFill}>{percent}</tspan>
 				<ToolTipTSpanLabel fill={labelFill} key="label_Vol">{displayTexts.v}</ToolTipTSpanLabel>
 				<tspan key="value_Vol" fill={textFill}>{volume}</tspan>
 			</ToolTipText>

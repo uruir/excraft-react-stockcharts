@@ -36,7 +36,7 @@ class MACDTooltip extends Component {
 
 		return (
 			<g className={className} transform={`translate(${ x }, ${ y })`} onClick={onClick}>
-				<ToolTipText x={0} y={0}
+				<ToolTipText x={37} y={0}
 					fontFamily={fontFamily} fontSize={fontSize}>
 					<ToolTipTSpanLabel fill={labelFill}>MACD (</ToolTipTSpanLabel>
 					<tspan fill={appearance.stroke.macd}>{options.slow}</tspan>
