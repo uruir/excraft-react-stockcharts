@@ -14,26 +14,16 @@ import { functor } from "../utils";
 class SingleMAToolTip extends Component {
 	constructor(props) {
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
-	}
-	handleClick(e) {
-		const { onClick, forChart, options } = this.props;
-		onClick({ chartId: forChart, ...options }, e);
 	}
 	render() {
-		const { textFill, labelFill } = this.props;
+		const { labelFill } = this.props;
 		const translate = "translate(" + this.props.origin[0] + ", " + this.props.origin[1] + ")";
 		return (
 			<g transform={translate}>
-				<line x1={0} y1={2} x2={0} y2={28} stroke={this.props.color} strokeWidth="4px"/>
-				<ToolTipText x={5} y={11}
-					fontFamily={this.props.fontFamily} fontSize={this.props.fontSize}>
+				<line x1={0} y1={-10} x2={0} y2={2} stroke={this.props.color} strokeWidth="12px"/>
+				<ToolTipText x={10} y={0} fontFamily={this.props.fontFamily} fontSize={this.props.fontSize}>
 					<ToolTipTSpanLabel fill={labelFill}>{this.props.displayName}</ToolTipTSpanLabel>
-					<tspan x="5" dy="15" fill={textFill}>{this.props.value}</tspan>
 				</ToolTipText>
-				<rect x={0} y={0} width={55} height={30}
-					onClick={this.handleClick}
-					fill="none" stroke="none" />
 			</g>
 		);
 	}

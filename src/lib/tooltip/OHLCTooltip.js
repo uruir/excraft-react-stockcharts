@@ -99,6 +99,7 @@ const displayTextsDefault = {
 	h: " H: ",
 	l: " L: ",
 	c: " C: ",
+	p: " P: ",
 	v: " Vol: ",
 	na: "n/a"
 };
@@ -111,7 +112,8 @@ OHLCTooltip.defaultProps = {
 			high: d.high,
 			low: d.low,
 			close: d.close,
-			volume: d.volume
+			percent: d.percent,
+			volume: d.volume,
 		};
 	},
 	xDisplayFormat: timeFormat("%Y-%m-%d"),
@@ -144,6 +146,7 @@ function defaultDisplay(props, moreProps, itemsToDisplay) {
 		high,
 		low,
 		close,
+		percent,
 		volume,
 		x,
 		y
@@ -160,11 +163,6 @@ function defaultDisplay(props, moreProps, itemsToDisplay) {
 				fontFamily={fontFamily}
 				fontSize={fontSize}
 			>
-				<ToolTipTSpanLabel
-					fill={labelFill}
-					key="label"
-					x={0}
-					dy="5">{displayTexts.d}</ToolTipTSpanLabel>
 				<tspan key="value" fill={textFill}>{displayDate}</tspan>
 				<ToolTipTSpanLabel fill={labelFill} key="label_O">{displayTexts.o}</ToolTipTSpanLabel>
 				<tspan key="value_O" fill={textFill}>{open}</tspan>
@@ -174,6 +172,8 @@ function defaultDisplay(props, moreProps, itemsToDisplay) {
 				<tspan key="value_L" fill={textFill}>{low}</tspan>
 				<ToolTipTSpanLabel fill={labelFill} key="label_C">{displayTexts.c}</ToolTipTSpanLabel>
 				<tspan key="value_C" fill={textFill}>{close}</tspan>
+				<ToolTipTSpanLabel fill={labelFill} key="label_P">{displayTexts.p}</ToolTipTSpanLabel>
+				<tspan key="value_Vol" fill={textFill}>{percent}</tspan>
 				<ToolTipTSpanLabel fill={labelFill} key="label_Vol">{displayTexts.v}</ToolTipTSpanLabel>
 				<tspan key="value_Vol" fill={textFill}>{volume}</tspan>
 			</ToolTipText>

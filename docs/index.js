@@ -4,7 +4,7 @@ import { timeParse } from "d3-time-format";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Chart from "./lib/charts/CandleStickChartWithDarkTheme";
+import Chart from "./lib/charts/CandleStickChartWithMACDIndicator";
 // import Chart from "./lib/charts/OHLCChartWithElderRayIndicator";
 
 const ReadME = require("md/MAIN.md");
