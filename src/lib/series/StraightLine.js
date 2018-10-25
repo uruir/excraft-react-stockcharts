@@ -26,7 +26,6 @@ class StraightLine extends Component {
 		ctx.lineWidth = strokeWidth;
 
 		const { x1, y1, x2, y2 } = getLineCoordinates(type, xScale, yScale, xValue, yValue, width, height);
-
 		ctx.setLineDash(getStrokeDasharray(strokeDasharray).split(","));
 		ctx.moveTo(x1, y1);
 		ctx.lineTo(x2, y2);
@@ -65,7 +64,7 @@ class StraightLine extends Component {
 
 function getLineCoordinates(type, xScale, yScale, xValue, yValue, width, height) {
 	return type === "horizontal"
-		? { x1: 0, y1: Math.round(yScale(yValue)), x2: width, y2: Math.round(yScale(yValue)) }
+		? { x1: 0, y1: Math.round(yScale(yValue) ? yScale(yValue) : 0), x2: width, y2: Math.round(yScale(yValue) ? yScale(yValue) : 0) }
 		: { x1: Math.round(xScale(xValue)), y1: 0, x2: Math.round(xScale(xValue)), y2: height };
 }
 
